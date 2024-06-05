@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">MaxiGrip Hangboard Trainer</string>
+    <string name="nav_about">About MaxiGrip</string>
+    <string name="nav_saved_workouts">Saved Workouts</string>
+    <string name="nav_workout">Workout</string>
+    <string name="nav_set_creator_step_1">Create Workout Set (Step 1)</string>
+    <string name="nav_set_editor_step_1">Edit Workout Set (Step 1)</string>
+    <string name="nav_set_creator_step_2">Create Workout Set (Step 2)</string>
+    <string name="nav_set_editor_step_2">Edit Workout Set (Step 2)</string>
+    <string name="nav_et_creator">Create Grip Type</string>
+
+    <string name="content_desc_app_icon">App Icon</string>
+    <string name="version">Version</string>
+
+    <string name="create_new_grip_type">Create New Grip Type</string>
+    <string name="error_name_required">Please enter a name.</string>
+    <string name="char_limit_exceeded">Maximum length %1$02d characters.</string>
+    <string name="select_grip_type">Please select an Grip Type.</string>
+
+    <string name="hang">Hang</string>
+    <string name="rest">Rest</string>
+    <string name="recover">Recover</string>
+
+    <string name="hang_time">Hang Time</string>
+    <string name="rest_time">Rest Time</string>
+    <string name="num_reps"># Cycles</string>
+    <string name="recovery_time">Recovery TIme</string>
+
+    <string name="dismiss">Dismiss</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="ellipsis">…</string>
+
+    <string name="add_workout_set_hint">No workout sets found. Add some using the button above.</string>
+
+    <string name="start_workout">Start Workout</string>
+
+    <string name="grip_type_name">Grip Type Name…</string>
+    <string name="workout_name">Workout Name:</string>
+    <string name="new_workout_name">New Workout Name…</string>
+
+    <string name="save">Save</string>
+    <string name="save_as">Save As…</string>
+    <string name="save_workout">Save Workout</string>
+    <string name="save_new_workout">Save New Workout</string>
+    <string name="overwrite_existing">Overwrite Existing</string>
+    <string name="overwrite_existing_workout">Overwrite Existing Workout</string>
+    <string name="workout_saved">Workout \'%1$s\' saved.</string>
+    <string name="workout_save_fail">Failed to save Workout</string>
+    <string name="error_delete_et_prefix">Cannot delete Grip Type \'%1$s\'. It is used by workout\u0020</string>
+    <string name="error_delete_et_truncated">\u0020and others.</string>
+    <string name="error_delete_et_postfix">\u0020Please edit or delete those workouts first.</string>
+
+    <string name="upgrade_to_pro">Upgrade To Pro!</string>
+    <string name="upgrade_to_pro_benefits">Get the following benefits:</string>
+    <string name="upgrade_to_pro_benefits_list">
+        \u2022 Advert Free\n\u2022 Unlimited Saved Workout Slots\n\u2022 Access to all future PRO features
+    </string>
+    <string name="upgrade_now">Upgrade Now</string>
+    <string name="upgrade">Upgrade</string>
+
+    <string name="create_new_workout">Create New Workout</string>
+    <string name="load_saved_workout">Load Saved Workout</string>
+
+    <string name="up_next">Up Next:</string>
+    <string name="remaining_time">Remaining Time:</string>
+    <string name="workout_complete">Workout Complete!</string>
+
+    <string name="content_desc_sort_alphabetically">Sort Alphabetically</string>
+    <string name="content_desc_selected">Image indicating this item is selected</string>
+    <string name="move_up">Move up</string>
+    <string name="move_down">Move down</string>
+    <string name="workout_slot_free">FREE Workout Slot</string>
+    <string name="workout_slot_locked">Upgrade to PRO for unlimited slots!</string>
+    <string name="get_ready">Get Ready!</string>
+    <string name="content_desc_workout_section_icon">Icon representing the current section of the workout</string>
+    <string name="content_desc_toggle_mute">Icon showing the current sound status. Used to mute / un-mute the workout sounds</string>
+    <string name="content_desc_toggle_pause">Shows the current pause status. Toggles between paused an un-paused</string>
+    <string name="content_desc_skip">Skip the current workout section</string>
+    <string name="content_desc_num_reps">Icon indicating the current repetition</string>
+    <string name="content_desc_work_time">Icon indicating the working period</string>
+    <string name="content_desc_rest_time">Icon indicating the resting period</string>
+    <string name="content_desc_recover_time">Icon indicating the recovery period</string>
+    <string name="content_desc_prepare">Icon indicating the preparation period</string>
+    <string name="content_desc_add_set_to_workout">Add Workout Set to your Workout</string>
+    <string name="content_desc_grip_type">Grip Type</string>
+    <string name="create_your_workout">Create Your Workout</string>
+    <string name="edit_your_workout">Edit Workout \'%1$s\'</string>
+    <string name="error_no_workout_sets">Please add at least one Workout Set to your Workout</string>
+
+    <string name="settings">Settings</string>
+    <string name="feedback">Feedback</string>
+    <string name="name_too_long_warning">Name cannot be more than 30 characters</string>
+    <string name="no_free_workout_slots_warning">No free workout slots!</string>
+
+    <string name="agree">Agree</string>
+    <string name="user_consent_title">MaxiGrip Analytics</string>
+
+    <!-- User settings / Consent -->
+    <string name="preparation_set_enabled">Preparation Phase</string>
+    <string name="preparation_set_summary">Shows a preparation timer before the workout starts</string>
+    <string name="preparation_set_time">Preparation Duration</string>
+    <string name="final_seconds_beep">Final Seconds Sound</string>
+    <string name="final_seconds_beep_summary">Vocal sound when nearing the end of a hang phase</string>
+    <string name="personalized_ads_enabled">Personalized Adverts</string>
+    <string name="analytics_enabled">Send Analytics</string>
+
+    <string name="user_consent_details_1">
+        This app is provided free by showing adverts.\n
+        We use the following 3rd party services: \n\n
+
+        \u2022 Google AdMob to show personalized adverts\n
+        \u2022 Google Firebase for anonymized analytics and crash reporting\n\n
+        These services make your app experience better and allow us to keep improving this app.\nFull details are available in the\u0020</string>
+    <string name="privacy_policy">privacy policy</string>
+    <string name="user_consent_details_2">.\nWe care about your privacy and data security and you can manage your choices in the settings page at any time.</string>
+    <string name="privacy">Privacy</string>
+    <string name="analytics_enabled_summary">Send anonymized analytics to help us improve</string>
+    <string name="continue_to_step_2">Continue to Step 2</string>
+    <string name="add_exercise_set_to_workout">Add exercise set to workout</string>
+    <string name="no_saved_workouts">No saved workouts exist. Please save as a new workout.</string>
+    <string name="no_saved_workouts_found">No Saved Workouts!</string>
+
+    <string name="pref_unsaved_changes_warning">pref_unsaved_changes_warning</string>
+    <string name="pref_unsaved_workout_warning">pref_unsaved_workout_warning</string>
+    <string name="pref_review_last_ask">pref_review_last_ask</string>
+    <string name="unsaved_changes_warning">Any unsaved changes will be lost</string>
+    <string name="unsaved_workout_warning">Have you saved your workout?</string>
+    <string name="unsaved_workout_warning_details">If you haven\'t saved your workout it will be lost.</string>
+    <string name="dont_show_again">Don\'t show again</string>
+    <string name="continue_anyway">Continue Anyway</string>
+    <string name="close">Close</string>
+    <string name="workout_set_help">Creating A Workout Set</string>
+    <string name="workout_set_help_details">Workout Sets are cycles of hang &amp; rest phases with a recovery time at the end.\n\nFor example, with 3 cycles:</string>
+
+    <string name="workout_recovery_time_full">%1$dx,\n%2$ds recovery</string>
+    <string name="duration_text">Duration: %1$s</string>
+    <string name="application_icon">application icon</string>
+    <string name="times">times</string>
+    <string name="with">with</string>
+    <string name="s_rest_in_between">s rest in between</string>
+    <string name="recovery_default">120</string>
+    <string name="complete_workout">Complete Workout</string>
+    <string name="repeat_workout">Repeat Workout</string>
+    <string name="missing_values">Please ensure all fields contain a value.</string>
+    <string name="workout_set_values_zero_warning">\'Hang Time\', \'Rest Time\' &amp; \'# Cycles\' must be greater than 0.</string>
+
+    <string name="settings_saved">Settings Updated</string>
+    <string name="manage_privacy_gdpr">Privacy Settings…</string>
+    <string name="unexpected_problem_try_again">Unexpected error - please try again later.</string>
+    <string name="loading_advert">Loading Advert…</string>
+</resources>

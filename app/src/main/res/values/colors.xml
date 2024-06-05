@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryFaded">#6CBDB5</color>
+
+    <color name="background">#CDDADD</color>
+
+    <color name="grey">#838383</color>
+
+    <color name="work">#FF7043</color>
+    <color name="rest">#9169eb</color>
+    <color name="numReps">#66BB6A</color>
+    <color name="recover">#42A5F5</color>
+</resources>
