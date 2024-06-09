@@ -1,9 +1,11 @@
 pipeline {
-    agent { docker { image 'maven:3.9.7-eclipse-temurin-17-alpine' } }
+    agent { any }
     stages {
-        stage('test') {
+        stage('build') {
             steps {
-                sh 'mvn --version'
+                echo "Starting Build Stage"
+				sh '''./gradlew build clean'''
+                echo "The build stage passed..."
             }
         }
     }
