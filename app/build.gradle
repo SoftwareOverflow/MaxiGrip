@@ -9,12 +9,13 @@ plugins {
     id 'com.google.firebase.crashlytics'
 }
 
-def localProperties = new Properties()
+def keyProperties = new Properties()
 try {
-    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+    keyProperties.load(new FileInputStream(rootProject.file("key.properties")))
 } catch (Exception ignored) {
-    logger.warn("No Local Properties File Found!")
+    logger.warn("No key.properties file found - revering to defaults!")
 }
+def testDeviceIds = keyProperties['testDeviceIds'] ?: "{}"
 
 android {
     namespace "com.softwareoverflow.maxigriphangboardtrainer"
@@ -29,7 +30,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String[]", "DEV_DEVICES", localProperties['testDeviceIds'])
+        buildConfigField("String[]", "DEV_DEVICES", testDeviceIds)
     }
 
     buildTypes {
