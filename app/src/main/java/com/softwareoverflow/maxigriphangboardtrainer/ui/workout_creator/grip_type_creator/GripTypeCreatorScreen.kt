@@ -34,6 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.result.ResultBackNavigator
 import com.softwareoverflow.maxigriphangboardtrainer.R
@@ -50,7 +51,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.HandGripDu
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 
 
-@Destination
+@Destination<RootGraph>
 @Composable
 fun GripTypeCreatorScreen(
     gripTypeDTO: GripTypeDTO,

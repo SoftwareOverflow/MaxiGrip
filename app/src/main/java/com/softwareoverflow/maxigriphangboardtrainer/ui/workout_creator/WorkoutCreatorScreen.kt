@@ -65,6 +65,7 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.result.NavResult
 import com.ramcosta.composedestinations.result.ResultRecipient
@@ -72,11 +73,11 @@ import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.GripTypeDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutSetDTO
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.RepeatWorkoutDialogDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.UnsavedChangesWarningScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutSaverScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutSetCreatorStep1Destination
+import com.ramcosta.composedestinations.generated.destinations.RepeatWorkoutDialogDestination
+import com.ramcosta.composedestinations.generated.destinations.UnsavedChangesWarningScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutSaverScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutSetCreatorStep1Destination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.getFormattedDuration
 import com.softwareoverflow.maxigriphangboardtrainer.ui.navigation.NavigationResultActionBasic
 import com.softwareoverflow.maxigriphangboardtrainer.ui.navigation.NavigationSaveResult
@@ -93,7 +94,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.findActivity
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.horizontalGradient
 
-@Destination
+@Destination<RootGraph>
 @Composable
 fun WorkoutCreatorScreen(
     workoutDTO: WorkoutDTO,

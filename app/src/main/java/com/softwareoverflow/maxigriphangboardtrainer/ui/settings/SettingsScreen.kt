@@ -22,10 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.google.android.ump.ConsentInformation
 import com.google.android.ump.UserMessagingPlatform
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.result.ResultBackNavigator
 import com.softwareoverflow.maxigriphangboardtrainer.BuildConfig
 import com.softwareoverflow.maxigriphangboardtrainer.R
@@ -38,7 +39,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.CircleChec
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.findActivity
 
-@Destination
+@Destination<RootGraph>
 @Composable
 fun SettingsScreen(
     resultBackNavigator: ResultBackNavigator<NavigationResultActionBasic>,

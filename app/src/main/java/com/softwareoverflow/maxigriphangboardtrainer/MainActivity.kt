@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Snackbar
@@ -19,16 +20,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.edit
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.preference.PreferenceManager
 import com.ramcosta.composedestinations.DestinationsNavHost
+import com.ramcosta.composedestinations.generated.NavGraphs
+import com.ramcosta.composedestinations.generated.destinations.HomeScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.LoadWorkoutScreenDestination
 import com.softwareoverflow.maxigriphangboardtrainer.repository.billing.BillingRepository
-import com.softwareoverflow.maxigriphangboardtrainer.ui.NavGraphs
 import com.softwareoverflow.maxigriphangboardtrainer.ui.compose.MountainBackground
 import com.softwareoverflow.maxigriphangboardtrainer.ui.consent.ConsentManagerGoogle
 import com.softwareoverflow.maxigriphangboardtrainer.ui.consent.UserConsentManager
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.HomeScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.LoadWorkoutScreenDestination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import com.softwareoverflow.maxigriphangboardtrainer.ui.upgrade.BillingViewModel
 import com.softwareoverflow.maxigriphangboardtrainer.ui.upgrade.MobileAdsManager
@@ -49,6 +51,7 @@ class MainActivity : ComponentActivity() {
     lateinit var bvm: BillingViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.decorView // POTENTIAL BUGFIX for https://issuetracker.google.com/issues/37095334 causing intermittent crashing on start.
         super.onCreate(savedInstanceState)
 
 
@@ -106,6 +109,7 @@ class MainActivity : ComponentActivity() {
                     Box(
                         Modifier
                             .fillMaxSize()
+                            .systemBarsPadding()
                             .padding(paddingValues)
                     ) {
                         HomeScreenContent(appState)
@@ -134,7 +138,9 @@ class MainActivity : ComponentActivity() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (prefs.getBoolean("firstRun", true)) {
             MobileAdsManager.isFirstRun = true
-            prefs.edit().putBoolean("firstRun", false).apply()
+            prefs.edit {
+                putBoolean("firstRun", false)
+            }
         }
 
         MobileAdsManager.resume()
@@ -143,7 +149,9 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (prefs.getBoolean("firstRun", true)) {
-            prefs.edit().putBoolean("firstRun", false).apply()
+            prefs.edit {
+                putBoolean("firstRun", false)
+            }
         }
 
         MobileAdsManager.destroy()

@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.chargemap.compose.numberpicker.NumberPicker
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.result.ResultBackNavigator
 import com.ramcosta.composedestinations.spec.DestinationStyle
 import com.softwareoverflow.maxigriphangboardtrainer.R
@@ -28,7 +29,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.compose.BasicTextFieldIn
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.DialogOverlay
 
-@Destination(style = DestinationStyle.Dialog::class)
+@Destination<RootGraph>(style = DestinationStyle.Dialog::class)
 @Composable
 fun RepeatWorkoutDialog(workout: WorkoutDTO, resultBackNavigator: ResultBackNavigator<WorkoutDTO>) {
     var isRestBetweenError by remember { mutableStateOf(false) }

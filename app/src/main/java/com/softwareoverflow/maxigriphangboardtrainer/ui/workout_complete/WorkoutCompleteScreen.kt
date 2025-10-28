@@ -32,15 +32,16 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.result.NavResult
 import com.ramcosta.composedestinations.result.ResultRecipient
 import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutDTO
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.HomeScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.UnsavedChangesWarningScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.UpgradeScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutSaverScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.HomeScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.UnsavedChangesWarningScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.UpgradeScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutSaverScreenDestination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.navigation.NavigationResultActionBasic
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.spacing
@@ -49,7 +50,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.AppScreen
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.findActivity
 
-@Destination
+@Destination<RootGraph>
 @Composable
 fun WorkoutCompleteScreen(
     workout: WorkoutDTO,
