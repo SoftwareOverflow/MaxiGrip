@@ -55,14 +55,15 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.GripTypeDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.HandGripDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutSetDTO
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutCreatorScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutCreatorScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutScreenDestination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.getFormattedDuration
 import com.softwareoverflow.maxigriphangboardtrainer.ui.getTotalRecoverTime
 import com.softwareoverflow.maxigriphangboardtrainer.ui.getTotalRestTime
@@ -82,7 +83,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.view.list_adapter.workou
 import com.softwareoverflow.maxigriphangboardtrainer.ui.view.list_adapter.workout.WorkoutLoaderDomainObjectType
 
 @Composable
-@Destination
+@Destination<RootGraph>
 fun LoadWorkoutScreen(
     navigator: DestinationsNavigator, viewModel: WorkoutLoaderViewModel = hiltViewModel()
 ) {

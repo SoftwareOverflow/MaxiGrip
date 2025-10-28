@@ -45,13 +45,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.GripTypeDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutSetDTO
 import com.softwareoverflow.maxigriphangboardtrainer.ui.compose.TriangularAnimation
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutCompleteScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutCompleteScreenDestination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.spacing
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.AppScreen
@@ -62,7 +63,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.KeepScreen
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 
 
-@Destination
+@Destination<RootGraph>
 @Composable
 fun WorkoutScreen(
     workout: WorkoutDTO,

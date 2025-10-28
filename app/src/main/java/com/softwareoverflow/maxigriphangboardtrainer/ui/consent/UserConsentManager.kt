@@ -1,6 +1,7 @@
 package com.softwareoverflow.maxigriphangboardtrainer.ui.consent
 
 import android.content.Context
+import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.SharedPreferencesManager
@@ -16,9 +17,11 @@ class UserConsentManager {
         fun setAnalytics(context: Context, boolean: Boolean) {
             FirebaseAnalytics.getInstance(context).setAnalyticsCollectionEnabled(boolean)
 
-            PreferenceManager.getDefaultSharedPreferences(context.applicationContext).edit()
-                .putBoolean(SharedPreferencesManager.analyticsEnabled, boolean)
-                .apply()
+            PreferenceManager.getDefaultSharedPreferences(context.applicationContext).edit {
+                // TODO CHECK IF THIS WORKS CORRECTLY!
+                putBoolean(SharedPreferencesManager.analyticsEnabled, boolean)
+                //.apply()
+            }
         }
 
     }

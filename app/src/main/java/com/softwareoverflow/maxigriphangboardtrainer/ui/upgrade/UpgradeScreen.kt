@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.spec.DestinationStyle
 import com.softwareoverflow.maxigriphangboardtrainer.R
@@ -22,7 +23,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.DialogOver
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.findActivity
 
 
-@Destination(style = DestinationStyle.Dialog::class)
+@Destination<RootGraph>(style = DestinationStyle.Dialog::class)
 @Composable
 fun UpgradeScreen(viewModel: UpgradeViewModel = hiltViewModel(), navigator: DestinationsNavigator) {
     val context = LocalContext.current

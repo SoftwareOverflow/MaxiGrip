@@ -35,13 +35,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.result.ResultBackNavigator
 import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.GripTypeDTO
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutSetDTO
 import com.softwareoverflow.maxigriphangboardtrainer.ui.compose.BasicTextFieldInt
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutSetCreatorHelpDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutSetCreatorHelpDestination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.spacing
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.AppScreen
@@ -49,7 +50,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.ColouredIc
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.HandGripDual
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 
-@Destination
+@Destination<RootGraph>
 @Composable
 fun WorkoutSetCreatorStep2(
     dto: WorkoutSetDTO,

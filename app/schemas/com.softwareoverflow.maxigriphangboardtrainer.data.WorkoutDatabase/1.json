@@ -1,0 +1,266 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "75d4c129f421f5906ac8cea15f41ba21",
+    "entities": [
+      {
+        "tableName": "Workout",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `numReps` INTEGER NOT NULL, `recoveryTime` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numReps",
+            "columnName": "numReps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recoveryTime",
+            "columnName": "recoveryTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "WorkoutSet",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`workoutId` INTEGER NOT NULL, `orderInWorkout` INTEGER NOT NULL, `workTime` INTEGER NOT NULL, `restTime` INTEGER NOT NULL, `numReps` INTEGER NOT NULL, `recoverTime` INTEGER NOT NULL, `gripTypeId` INTEGER NOT NULL, `name` TEXT NOT NULL, `left_thumb` INTEGER NOT NULL, `left_index` INTEGER NOT NULL, `left_middle` INTEGER NOT NULL, `left_ring` INTEGER NOT NULL, `left_little` INTEGER NOT NULL, `right_thumb` INTEGER NOT NULL, `right_index` INTEGER NOT NULL, `right_middle` INTEGER NOT NULL, `right_ring` INTEGER NOT NULL, `right_little` INTEGER NOT NULL, PRIMARY KEY(`workoutId`, `orderInWorkout`), FOREIGN KEY(`workoutId`) REFERENCES `Workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderInWorkout",
+            "columnName": "orderInWorkout",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workTime",
+            "columnName": "workTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "restTime",
+            "columnName": "restTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numReps",
+            "columnName": "numReps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recoverTime",
+            "columnName": "recoverTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.gripTypeId",
+            "columnName": "gripTypeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.leftHand.thumb",
+            "columnName": "left_thumb",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.leftHand.index",
+            "columnName": "left_index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.leftHand.middle",
+            "columnName": "left_middle",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.leftHand.ring",
+            "columnName": "left_ring",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.leftHand.little",
+            "columnName": "left_little",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.rightHand.thumb",
+            "columnName": "right_thumb",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.rightHand.index",
+            "columnName": "right_index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.rightHand.middle",
+            "columnName": "right_middle",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.rightHand.ring",
+            "columnName": "right_ring",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gripType.rightHand.little",
+            "columnName": "right_little",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "workoutId",
+            "orderInWorkout"
+          ]
+        },
+        "foreignKeys": [
+          {
+            "table": "Workout",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "workoutId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "GripType",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`gripTypeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `left_thumb` INTEGER NOT NULL, `left_index` INTEGER NOT NULL, `left_middle` INTEGER NOT NULL, `left_ring` INTEGER NOT NULL, `left_little` INTEGER NOT NULL, `right_thumb` INTEGER NOT NULL, `right_index` INTEGER NOT NULL, `right_middle` INTEGER NOT NULL, `right_ring` INTEGER NOT NULL, `right_little` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "gripTypeId",
+            "columnName": "gripTypeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leftHand.thumb",
+            "columnName": "left_thumb",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leftHand.index",
+            "columnName": "left_index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leftHand.middle",
+            "columnName": "left_middle",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leftHand.ring",
+            "columnName": "left_ring",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leftHand.little",
+            "columnName": "left_little",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rightHand.thumb",
+            "columnName": "right_thumb",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rightHand.index",
+            "columnName": "right_index",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rightHand.middle",
+            "columnName": "right_middle",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rightHand.ring",
+            "columnName": "right_ring",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rightHand.little",
+            "columnName": "right_little",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "gripTypeId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '75d4c129f421f5906ac8cea15f41ba21')"
+    ]
+  }
+}

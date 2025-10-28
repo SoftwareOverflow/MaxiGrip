@@ -25,7 +25,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import timber.log.Timber
 
-val bannerAdSize = AdSize.FULL_BANNER
+val bannerAdSize = AdSize.BANNER
 
 @Composable
 fun AdvertView(modifier: Modifier = Modifier, onAdLoaded: () -> Unit) {
@@ -81,7 +81,7 @@ fun AdvertView(modifier: Modifier = Modifier, onAdLoaded: () -> Unit) {
 private fun AdvertPreview() {
 
     AppTheme {
-        AdvertView() {}
+        AdvertView {}
         Column(Modifier.fillMaxSize()) {
 
         }

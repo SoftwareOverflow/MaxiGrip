@@ -21,7 +21,7 @@ class ConsentManagerGoogle private constructor(context: Context) {
         activity: Activity, onConsentReceived: () -> Unit
     ) {
         val debugSettings = ConsentDebugSettings.Builder(activity)
-            .setDebugGeography(ConsentDebugSettings.DebugGeography.DEBUG_GEOGRAPHY_NOT_EEA)
+            .setDebugGeography(ConsentDebugSettings.DebugGeography.DEBUG_GEOGRAPHY_EEA)
             .addTestDeviceHashedId("B3EEABB8EE11C2BE770B684D95219ECB")
             .build()
 

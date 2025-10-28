@@ -33,7 +33,7 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.annotation.RootNavGraph
+import com.ramcosta.composedestinations.annotation.RootGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.navigation.EmptyDestinationsNavigator
 import com.ramcosta.composedestinations.result.EmptyResultRecipient
@@ -41,10 +41,10 @@ import com.ramcosta.composedestinations.result.NavResult
 import com.ramcosta.composedestinations.result.ResultRecipient
 import com.softwareoverflow.maxigriphangboardtrainer.R
 import com.softwareoverflow.maxigriphangboardtrainer.repository.dto.WorkoutDTO
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.LoadWorkoutScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.SettingsScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.UpgradeScreenDestination
-import com.softwareoverflow.maxigriphangboardtrainer.ui.destinations.WorkoutCreatorScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.LoadWorkoutScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.SettingsScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.UpgradeScreenDestination
+import com.ramcosta.composedestinations.generated.destinations.WorkoutCreatorScreenDestination
 import com.softwareoverflow.maxigriphangboardtrainer.ui.navigation.NavigationResultActionBasic
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.AppTheme
 import com.softwareoverflow.maxigriphangboardtrainer.ui.theme.spacing
@@ -52,8 +52,7 @@ import com.softwareoverflow.maxigriphangboardtrainer.ui.upgrade.UpgradeManager
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.AppScreen
 import com.softwareoverflow.maxigriphangboardtrainer.ui.utils.compose.TopAppRow
 
-@Destination
-@RootNavGraph(start = true)
+@Destination<RootGraph>(start = true)
 @Composable
 fun HomeScreen(
     navigator: DestinationsNavigator,
